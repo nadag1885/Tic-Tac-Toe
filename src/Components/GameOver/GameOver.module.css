@@ -39,3 +39,18 @@
     color: #282617f2;
     background-color: #fcd256;
 }
+
+@media (max-width: 768px) {  
+    .GameOver {
+            font-size: 50px;
+        }
+    
+        .winner {
+            font-size: 30px;
+        }
+    
+        .restartBtn {
+            font-size: 30px;
+            padding: 10px 20px;
+        }
+}

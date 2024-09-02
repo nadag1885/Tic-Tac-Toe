@@ -60,4 +60,23 @@
 .activePlayer{  
     border: 3px solid  ;
     border-color: #f6e35a;
-}
+}                     
+@media (max-width: 768px) {  
+    .player {
+            padding: 5px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+    
+        .playerName,
+        .playerSymbol {
+            font-size: 16px;
+        }
+    
+        .inputName {
+            font-size: 16px;
+            width: 8rem;
+        }
+    }
