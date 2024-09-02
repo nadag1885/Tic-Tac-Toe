@@ -1,0 +1,27 @@
+.board{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+    flex-direction: column;
+    list-style: none;
+}
+.board ol {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none !important;
+}
+.cell{
+    width: 150px;
+    height: 150px;
+    border: none;
+    background: #aca788;
+    color: #3f3b00;
+    font-size: 5rem;
+    cursor: pointer;
+    font-family: 'Caprasimo', cursive;
+    padding: 1rem;
+}
