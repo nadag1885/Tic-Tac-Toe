@@ -13,6 +13,10 @@ const Bord = [
 ];
 
 export default function App() {
+  const [playerName, setPlayerName] = useState({
+    X: "player 1",
+    O: "player 2",
+  });
   const [gameTurns, setGameTurns] = useState([]);
   const [activePlayer, setActivePlayer] = useState("X");
 
@@ -51,10 +55,16 @@ export default function App() {
     const thirdSquar = gameBord[combination[2].row][combination[2].col];
     if (firstSquar && firstSquar == secondSquar && firstSquar == thirdSquar) {
       console.log(`${firstSquar} is the winner`);
-      winner = firstSquar;
+      winner = playerName[firstSquar];
     }
   }
   const isDraw = gameTurns.length >= 9 && !winner;
+  const handelPlayerName = (sympol, newName) => {
+    setPlayerName((prevState) => {
+      return { ...prevState, [sympol]: newName };
+    });
+    console.log(playerName);
+  };
   return (
     <div className="App">
       <div className="playersBord">
@@ -62,8 +72,10 @@ export default function App() {
           playerName="player 1"
           symbol="X"
           isActive={activePlayer === "X" ? true : false}
+          handelPlayerName={handelPlayerName}
         ></Player>
         <Player
+          handelPlayerName={handelPlayerName}
           playerName="player 2"
           symbol="O"
           isActive={activePlayer === "O" ? true : false}
@@ -77,6 +89,9 @@ export default function App() {
       {(winner || isDraw) && (
         <GameOver winner={winner} handelRestart={handelRestart}></GameOver>
       )}
+      <button onClick={handelRestart} className="resetBtn">
+        Restart
+      </button>
     </div>
   );
 }

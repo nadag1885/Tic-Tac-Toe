@@ -1,11 +1,12 @@
 import style from './Player.module.css'
 import React , { useState, useEffect } from 'react';
 
-export default function Player({playerName, symbol,isActive}){
+export default function Player({playerName, symbol,isActive,handelPlayerName}){
     const [isEditing, setIsEditing] = useState(false);
     const [name, setName] = useState(playerName);
     const editHandler =()=>{
         setIsEditing(editing => !editing);
+        isEditing && handelPlayerName(symbol , name);
     }
     const onCangeHandler = (e)=>{
         setName(e.target.value);

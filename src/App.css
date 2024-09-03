@@ -26,7 +26,18 @@
 .activPlayer{
   width: 300px;
 }
-
+.resetBtn{
+  display: block;
+    margin: 20px auto;
+    font-size: 50px;
+    background: rgba(250, 176, 103, 0.87);
+    border: 2px solid #fcd256;
+    color: #282617;
+    padding: 10px 50px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s, color 0.2s;
+}
 
 @media (max-width: 768px) {
   .App {
